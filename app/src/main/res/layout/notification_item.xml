@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="5dp"
+    android:layout_marginBottom="15dp"
+    android:background="@drawable/ripple_quote_bg"
+    android:paddingHorizontal="13dp"
+    android:paddingVertical="10dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/notification_user_photo"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:src="@drawable/user"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/otherPeopleCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/blue_circle_dot"
+        android:includeFontPadding="false"
+        android:padding="4dp"
+        android:text="+3"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="8sp"
+        android:textStyle="bold"
+        android:translationX="5dp"
+        app:layout_constraintEnd_toEndOf="@+id/notification_user_photo"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/notificationText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_toEndOf="@id/notification_user_photo"
+        android:text="67 people liked the quote you added from the book called Kepenekler"
+        android:textColor="@color/colorPrimaryText"
+        app:layout_constraintBottom_toBottomOf="@+id/notification_user_photo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/otherPeopleCount"
+        app:layout_constraintTop_toTopOf="@+id/notification_user_photo" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

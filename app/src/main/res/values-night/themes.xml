@@ -1,0 +1,68 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.YourBookNotes" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/blue</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryVariant">@color/colorBackground</item>
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/colorBackground</item>
+        <item name="android:navigationBarColor">@color/colorBackground</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">false</item>
+
+        <item name="android:windowBackground">@color/colorBackground</item>
+        <item name="actionMenuTextAppearance">@style/ActionMenuTextAppearance</item>
+        <item name="actionMenuTextColor">@color/blue</item>
+        <item name="colorControlNormal">@color/colorPrimaryText</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="SplashTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+    <style name="ActionMenuTextAppearance">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="TabItemStyle" parent="Widget.MaterialComponents.TabLayout">
+        <item name="tabTextAppearance">@style/TabItemTextAppearance</item>
+    </style>
+
+    <style name="TabItemTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <style name="CustomNavViewStyle" parent="Widget.Design.NavigationView">
+        <item name="itemIconTint">@color/drawer_item_icon_selector</item>
+        <item name="itemBackground">@drawable/drawer_item_bg_selector</item>
+        <item name="itemTextColor">@color/drawer_item_text_selector</item>
+    </style>
+
+    <style name="CustomChipStyle" parent="Widget.MaterialComponents.Chip.Filter">
+        <item name="chipBackgroundColor">@drawable/chip_bg_selector</item>
+        <item name="android:textColor">@drawable/chip_text_selector</item>
+        <item name="chipStrokeColor">@drawable/chip_stroke_selector</item>
+        <item name="iconTint">@color/checkedChipTextColor</item>
+        <item name="checkedIconTint">@color/checkedChipTextColor</item>
+        <item name="chipStrokeWidth">1dp</item>
+    </style>
+
+    <style name="CustomChipStyleNoIcon" parent="CustomChipStyle">
+        <item name="checkedIcon">@null</item>
+    </style>
+
+    <style name="EditTextStyle" parent="Widget.AppCompat.EditText">
+        <item name="android:layout_height">45dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@drawable/edittext_bg</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:paddingLeft">15dp</item>
+    </style>
+</resources>

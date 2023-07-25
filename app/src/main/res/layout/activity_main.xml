@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/drawer_layout"
+    android:descendantFocusability="blocksDescendants"
+    tools:context=".ui.on_boarding.StartActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_mainActivity"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@color/colorBackground"
+            android:elevation="1dp" >
+            <TextView
+                android:id="@+id/toolbarText"
+                android:includeFontPadding="false"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimaryText"
+                android:layout_gravity="center"
+                android:text="Discover"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:layout_gravity="center"
+                android:id="@+id/searchInputContainer"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginHorizontal="@dimen/page_padding"
+                android:background="@color/inputBackgroundColor"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:src="@drawable/ic_search"
+                    app:tint="@color/colorSecondaryText" />
+
+                <EditText
+                    android:id="@+id/searchInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:hint="Search here..."
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragmentContainerView_mainActivity"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/bottom_nav_view"
+            android:layout_below="@id/toolbar_mainActivity"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/main_nav_graph" />
+
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_nav_view"
+            android:background="@drawable/bottom_navigation_bg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            app:elevation="2dp"
+            app:labelVisibilityMode="labeled"
+            app:menu="@menu/bottom_nav_menu" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_add_button"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="15dp"
+            android:src="@drawable/ic_add_single"
+            app:backgroundTint="@color/blue"
+            app:tint="@color/white" />
+
+        <Button
+            android:id="@+id/add_book_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_above="@id/fab_add_button"
+            android:layout_centerHorizontal="true"
+            android:layout_marginVertical="8dp"
+            android:background="@drawable/follow_button_bg"
+            android:includeFontPadding="false"
+            android:src="@drawable/ic_add_single"
+            android:text="Add new book "
+            android:textAllCaps="false"
+            android:visibility="invisible"
+            app:tint="@color/white" />
+
+        <Button
+            android:id="@+id/add_quote_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_above="@id/add_book_btn"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/follow_button_bg"
+            android:includeFontPadding="false"
+            android:src="@drawable/ic_add_single"
+            android:text="Add new quote"
+            android:textAllCaps="false"
+            android:visibility="invisible"
+            app:tint="@color/white" />
+    </RelativeLayout>
+
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/drawer_navigation_view"
+        android:background="@color/colorBackground"
+        app:menu="@menu/drawer_menu"
+        style="@style/CustomNavViewStyle"
+        app:headerLayout="@layout/drawer_header_layout"
+        android:layout_gravity="start"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"/>
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
